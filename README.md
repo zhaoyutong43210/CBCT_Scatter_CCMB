@@ -32,6 +32,7 @@ some useful toolkit:
 
 * [MicroDicom Viewer](https://www.microdicom.com/downloads.html), a free software to view the clinical data
 * [emeditor](https://www.emeditor.com/text-editor-features/history/emeditor-free/), the free version can view the GB scale text file
+* [msi afterburner](https://www.msi.com/Landing/afterburner/graphics-cards), a graphics card software that can overclock the GPU and accelerate the network training. 
 
 
 
