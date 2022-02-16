@@ -31,6 +31,9 @@ Project Progress
 some useful toolkit: 
 
 * [MicroDicom Viewer](https://www.microdicom.com/downloads.html), a free software to view the clinical data
+* [emeditor](https://www.emeditor.com/text-editor-features/history/emeditor-free/), the free version can view the GB scale text file
+
+
 
 ### Background knowledge / technique you need to know: 
 - Monte Carlo Simulation in Medical Physics
