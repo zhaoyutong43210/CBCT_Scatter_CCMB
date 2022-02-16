@@ -8,7 +8,7 @@ Project Progress
  - [x]  Varian planning CT & CBCT measurements (paitent data)
  - [x]  [generate paitent phantom from planning CT (and CBCT)](gen_egsphant/README.md)
  - [x]  [generate X-ray source (IAEA_phsp phase space database)](IAEA_phsp/README.md)
- - [x]  EGS_CBCT simulation based on measurement geometry ( ~900 projections)
+ - [x]  [EGS_CBCT simulation based on measurement geometry](CBCT_simu/README.md) ( ~900 projections)
  - [x]  Anti-scatter Grid post process on the simulation results 
  - [ ]  Test scatter removal performance with TIGRE reconstruction toolkit
  - [ ]  Generate Training/Validation/Test data set
