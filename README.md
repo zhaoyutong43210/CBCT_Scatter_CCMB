@@ -1,4 +1,4 @@
-# Cone Beam CT (CBCT) Scatter removal project in CancerCare Manitoba
+# Cone Beam CT (CBCT) Real-time Scatter removal project in CancerCare Manitoba
 
 ## project overview
 Use a deeplearning network (modified U-net) to perform the Cone Beam CT scatter removal in image-guided radiation therapy.
