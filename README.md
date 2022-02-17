@@ -72,6 +72,6 @@ The COMP Annual Scientific Meeting 2021
 
 # Reference
 
-[Improved scatter correction using adaptive scatter kernel superposition](https://pubmed.ncbi.nlm.nih.gov/21030750/)
+1. [Improved scatter correction using adaptive scatter kernel superposition](https://pubmed.ncbi.nlm.nih.gov/21030750/)
 
-[Developing a tri-hybrid algorithm to predict patient x-ray scatter into planar imaging detectors for therapeutic photon beams](https://mspace.lib.umanitoba.ca/handle/1993/35125)
+2. [Developing a tri-hybrid algorithm to predict patient x-ray scatter into planar imaging detectors for therapeutic photon beams](https://mspace.lib.umanitoba.ca/handle/1993/35125)
