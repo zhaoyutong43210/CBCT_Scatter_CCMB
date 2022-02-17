@@ -48,5 +48,8 @@ The FilterBowtie.xim file or Filter.xim  in the AIR-Half-Bowtie-125KV folder is 
 This folder only contains the reconstruction setup, the reconstructed image is in the third section.
 
 ## 3. CBCT 
+
 This folder contains the reconstructed image by using the Varian Reconstructor (this software is not accesssible since it's not a free, nor an open-source software).
 Therefore we use the TIGRE as our reconstructor.
+
+\.dcm files 
