@@ -1,7 +1,13 @@
 # EGS_CBCT simulation 
 
 ## Create an example EGS_CBCT input file
-
+```
+:start cbct setup:
+        orbit = 360.0
+        # step = 1;
+        y-rotation = 0.005 # in radians
+:stop cbct setup:
+```
 #### Rotation 
 
 Define The Rotation of this scan :
@@ -12,14 +18,14 @@ Define The X-ray source :
 
 ```
 :start source:
-		library 	= iaea_phsp_source
-		name 		= iaea_source
-		iaea phase space file = D:\IAEA_phsp\Varian_cbct_120kv 
-		particle type = all
-		# cutout = x1 x2 y1 y2  (optional)
-		# weight window = wmin wmax, the min and max particle weights to use. If the particle weight is not in this range, it is rejected. (optional)
-		recycle photons = 10  #number of times to recycle each photon (optional)
-		#recycle electrons = number of times to recycle each electron (optional)
+	library 	= iaea_phsp_source
+	name 		= iaea_source
+	iaea phase space file = D:\IAEA_phsp\Varian_cbct_120kv 
+	particle type = all
+	# cutout = x1 x2 y1 y2  (optional)
+	# weight window = wmin wmax, the min and max particle weights to use. If the particle weight is not in this range, it is rejected. (optional)
+	recycle photons = 10  #number of times to recycle each photon (optional)
+	#recycle electrons = number of times to recycle each electron (optional)
 :stop source:
 ```
 
