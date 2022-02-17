@@ -1,4 +1,4 @@
-# EGS_CBCT simulation 
+# EGS_CBCT Simulation Insight
 
 ## Create an example EGS_CBCT input file
 
@@ -9,13 +9,13 @@ Define The Rotation of this scan :
 ```
 :start cbct setup:
         orbit = 360.0
-        # step = 1;
-        y-rotation = 0.005 # in radians
+        y-rotation = 3.14159 # in radians
 :stop cbct setup:
 ```
 
 #### X-ray light source + Patient phantom
 
+We use the generated IAEA source from blank scan as our X-ray source. 
 Define The X-ray source :
 
 ```
@@ -25,13 +25,11 @@ Define The X-ray source :
 	iaea phase space file = D:\IAEA_phsp\Varian_cbct_120kv 
 	particle type = all
 	# cutout = x1 x2 y1 y2  (optional)
-	# weight window = wmin wmax, the min and max particle weights to use. If the particle weight is not in this range, it is rejected. (optional)
 	recycle photons = 10  #number of times to recycle each photon (optional)
-	#recycle electrons = number of times to recycle each electron (optional)
 :stop source:
 ```
 
-
+Use the absolute file path to define the paitent phantom.
 Define the Patient phantom: 
 
 ```
@@ -43,7 +41,7 @@ Define the Patient phantom:
 	  ct ramp = C:\EGSnrc-master\egs_home\egs_cbct\example_thorax.ramp
 :stop geometry:
 ```
-and the blank phantom used in calibration
+and the blank phantom used in calibration:
 ```
 :start geometry:
     library = egs_box
@@ -58,6 +56,8 @@ and the blank phantom used in calibration
 
 #### Variance Reduction Technique - Fix splitting
 
+We define the split number of each scattered photons. This will increase the simulation efficiency significantly.
+
 ```
 :start variance reduction:
    scoring type =  forced_detection  # scores photons AIMED at scoring plane  
@@ -68,11 +68,12 @@ and the blank phantom used in calibration
 
 
 #### Scoring plane
+
+X-ray detector (ideal). 
+
 ```
 :start scoring options:
-
     calculation type = planar 
-
       :start planar scoring:
            #minimum Kscat fraction = 0.5
            surrounding medium = AIR521ICRU   # AIR521ICRU or VACUUM 
@@ -85,22 +86,28 @@ and the blank phantom used in calibration
             # Uses file provided in the distribution
             muen file = C:\EGSnrc-master\egs_home\egs_fac\examples\muen_air.data
      :stop planar scoring:
-
 :stop scoring options:
 ```
 #### Histories
+
+The number of photons that we simulate in the EGS_cbct
 
 ```
 :start run control:
     ncase =  2e8
     calculation = first
 :stop run control:
-
 ```
 
 Once we create this example EGS_CBCT input file, we can run it and have a look of the simulation result.
 
 ## Generate a batch of egsinp file ( ~895 projections + 1 blank scan)
+
+we use the following function:
+
+```
+generate_cbct_rotation_file(rotation,step,FileName1,FileName2,mode)
+```
 
 ## Parallel computing (in our computer, we use 30 threads, with 32 maximum )
 
@@ -108,5 +115,12 @@ It would take around a week to do the whole set of simulations. Sometimes, the M
 All you need to do is close it, restart the system, and run this code again (make sure you adjusted mode to "continue a scan mode", don't run the "new mode"), it will skip the finished simulations and continue the scan. 
 
 So you just lose the result that haven't finished (may a few hours but not a lot). After the simulation is done, you should get enough \*.egsmap files correponding to the total number of measured projections
+
+```
+parpool(30)
+parfor file(1):file(895)
+	dos(file)
+end
+```
 
 ## Data process 
