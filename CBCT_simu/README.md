@@ -1,6 +1,6 @@
 # EGS_CBCT simulation 
 
-### EGS_CBCT input file
+## Create an example EGS_CBCT input file
 
 #### Rotation 
 
@@ -11,6 +11,9 @@
 #### Scoring plane
 
 #### Histories
+
+Once we create this example EGS_CBCT input file, we can run it and have a look of the simulation result.
+
 
 
 ## Parallel computing 
