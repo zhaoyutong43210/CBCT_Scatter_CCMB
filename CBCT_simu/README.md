@@ -58,8 +58,36 @@ and the blank phantom used in calibration
 
 #### Variance Reduction Technique - Fix splitting
 
-#### Scoring plane
+```
+:start variance reduction:
+   scoring type =  forced_detection  # scores photons AIMED at scoring plane  
+   delta transport medium = AIR521ICRU # AIR521ICRU LUNG521ICRU ICRUTISSUE521ICRU ICRPBONE521ICRU
+   FS splitting = 180 300 # Np Ns
+:stop variance reduction:
+```
 
+
+#### Scoring plane
+```
+:start scoring options:
+
+    calculation type = planar 
+
+      :start planar scoring:
+           #minimum Kscat fraction = 0.5
+           surrounding medium = AIR521ICRU   # AIR521ICRU or VACUUM 
+           screen resolution = 192 256   # 40 cm X 30 cm screen(Yreso)x(Xreso)
+           voxel size = 0.1552 0.1552  # This needs to be tested
+           :start transformation:        
+              translation = 16 0 50
+              rotation = 0 0 0
+           :stop transformation:
+            # Uses file provided in the distribution
+            muen file = C:\EGSnrc-master\egs_home\egs_fac\examples\muen_air.data
+     :stop planar scoring:
+
+:stop scoring options:
+```
 #### Histories
 
 Once we create this example EGS_CBCT input file, we can run it and have a look of the simulation result.
