@@ -58,3 +58,7 @@ Therefore we use the TIGRE as our reconstructor.
 \.dcm files 
 
 open with MicroDicom Viewer
+
+## Code
+
+Varian_DCM_read.m read the dcm files and save it to a \*.mat file, this is used for further phantom creation. 
