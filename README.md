@@ -12,7 +12,7 @@ Project Progress
  - [x]  Anti-scatter Grid post process on the simulation results 
  - [ ]  Test scatter removal performance with TIGRE reconstruction toolkit
  - [ ]  Generate Training/Validation/Test data set
- - [ ]  Train & evaluate the U-net work
+ - [ ]  [Train & evaluate the U-net work](U-net/README.md)
  - [ ]  Test on mulitiple paitents dataset
  - [ ]  Publication
  
