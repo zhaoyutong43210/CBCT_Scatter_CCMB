@@ -6,7 +6,7 @@
 
 #### ctCreate command
 
-The EGSnrc has a command to create the paitent phantom according to the . 
+The EGSnrc has a command to create the paitent phantom according to the planning CT. 
 
 Please see the section 16 CT Based Phantoms/ctcreate at page 110 in this [DOSXYZnrc Users Manual](https://nrc-cnrc.github.io/EGSnrc/doc/pirs794-dosxyznrc.pdf). 
 
