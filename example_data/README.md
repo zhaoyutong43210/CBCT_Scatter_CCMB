@@ -4,6 +4,8 @@
 
 \.dcm files 
 
+open with MicroDicom Viewer
+
 ## 2. CBCT projections
 
 ###  (scanning geometry is  given by the following files):
@@ -53,3 +55,5 @@ This folder contains the reconstructed image by using the Varian Reconstructor (
 Therefore we use the TIGRE as our reconstructor.
 
 \.dcm files 
+
+open with MicroDicom Viewer
