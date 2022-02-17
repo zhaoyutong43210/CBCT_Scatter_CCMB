@@ -1,6 +1,11 @@
 # EGS_CBCT simulation 
 
 ## Create an example EGS_CBCT input file
+
+#### Rotation 
+
+Define The Rotation of this scan :
+
 ```
 :start cbct setup:
         orbit = 360.0
@@ -8,9 +13,6 @@
         y-rotation = 0.005 # in radians
 :stop cbct setup:
 ```
-#### Rotation 
-
-Define The Rotation of this scan :
 
 #### X-ray light source + Patient phantom
 
