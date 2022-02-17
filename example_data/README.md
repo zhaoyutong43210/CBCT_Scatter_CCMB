@@ -24,7 +24,14 @@
 
 This folder stores the raw projection data, the data was store in \*.xim files. Each paitent have around 895 projections. 
 
-ReadXim function will read the data out according to the xim file names and returns to uint16 data. Also, the angle of each projection can also be acquired by 
+ReadXim function will read the data out according to the xim file names and returns to int32 data. Also, the angle of each projection can also be acquired by reading the header info. 
+
+TIGRE provide 2 methods to retirve the data from xim file:
+ 1. Using the MATLAB coding "ReadXim.m" function. The code is clear and easy to read, but slow.
+ 2. Using the C++ complied function "mexReadXim.mexw64". We can't see the code line by line, but this code is super fast!
+
+It's easy to compare the result of these two code, usually, you should be comfort using the mexReadXim function.
+
 
 #### Calibrations folder
 
