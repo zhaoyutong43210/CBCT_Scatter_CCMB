@@ -90,6 +90,14 @@ and the blank phantom used in calibration
 ```
 #### Histories
 
+```
+:start run control:
+    ncase =  2e8
+    calculation = first
+:stop run control:
+
+```
+
 Once we create this example EGS_CBCT input file, we can run it and have a look of the simulation result.
 
 ## Generate a batch of egsinp file ( ~895 projections + 1 blank scan)
