@@ -10,9 +10,43 @@ Define The Rotation of this scan :
 
 Define The X-ray source :
 
+```
+:start source:
+		library 	= iaea_phsp_source
+		name 		= iaea_source
+		iaea phase space file = D:\IAEA_phsp\Varian_cbct_120kv 
+		particle type = all
+		# cutout = x1 x2 y1 y2  (optional)
+		# weight window = wmin wmax, the min and max particle weights to use. If the particle weight is not in this range, it is rejected. (optional)
+		recycle photons = 10  #number of times to recycle each photon (optional)
+		#recycle electrons = number of times to recycle each electron (optional)
+:stop source:
+```
+
 
 Define the Patient phantom: 
 
+```
+:start geometry:
+    library = egs_ndgeometry
+    type    = EGS_XYZGeometry
+    name    = phantom
+    egsphant file = C:\EGSnrc-master\egs_home\egs_cbct\throaxCauch_305655.egsphant
+	  ct ramp = C:\EGSnrc-master\egs_home\egs_cbct\example_thorax.ramp
+:stop geometry:
+```
+and the blank phantom used in calibration
+```
+:start geometry:
+    library = egs_box
+    type    = EGS_box
+    name    = blank_phantom
+    box size = 40 40 40
+    :start media input:
+       media = AIR521ICRU
+    :stop media input:
+:stop geometry:
+```
 
 #### Variance Reduction Technique - Fix splitting
 
