@@ -1,4 +1,16 @@
+# A short verion 
+
+check function ``` main_cbct_scatter_project ``` have all folders and path defined correctly. 
+
+then run it, and select the working example egsinp file.
+
+wait for a long simulation time, restart if necessary. 
+
+once you got all egsmap files, you have finished the simulation should move to the anti-scatter grid post process.
+
 # EGS_CBCT Simulation Insight
+
+This part expalins how the egs_cbct works in this project.
 
 ## Create an example EGS_CBCT input file
 
@@ -124,3 +136,7 @@ end
 ```
 
 ## Data process 
+
+The data process can also be done use the parallel computing. 
+
+We need to convert the acsii info to matrix in MATLAB. 
