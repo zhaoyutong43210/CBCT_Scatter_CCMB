@@ -25,6 +25,7 @@ open with MicroDicom Viewer
 - number of voxels  
 - size of each voxel
 
+###  (scanning data is  given by the following folders):
 
 #### Acquisitions folder
 
