@@ -37,6 +37,10 @@ During this time, the example files provided by the IAEA database helped me alot
 
 ![Blank Scan for calibration](./BlankScan.png)
 
+
+![Flow Chart of creating X-ray source files](./Flowchart.png)
+
+
 #### Convert IAEA binary file to ASCII file
 
 A generic converter from IAEA to ASCII is given by IAEA. To use it, open the IAEA2ascii.exe file, type the IAEA_phsp filename without extension.
