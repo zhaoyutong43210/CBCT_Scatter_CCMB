@@ -6,9 +6,9 @@ However, the EGS_CBCT program does not have the option to calculate anti-scatter
 
 There are several option we can use.
 
-### Build a series lead strip physical model directly in the EGS_cbct program.
+### 1. Build a series lead strip physical model directly in the EGS_cbct program.
 
-### Edit the egs_cbct.cpp or scoring file
+### 2. Edit the egs_cbct.cpp or scoring file
 
-### Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
+### 3. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
 
