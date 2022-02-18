@@ -2,11 +2,12 @@
 
 ## 1. Planning CT 
 
+Paitent sliced data has been stored in a series \.dcm files, which can be open with MicroDicom Viewer. The following figure gives an example:
+
+
 ![MicroDicom example(planning CT)](./Microdicom_example2.png)
 
-\.dcm files 
-
-open with MicroDicom Viewer
+This data is used as the ground truth in this research. 
 
 ## 2. CBCT projections
 
