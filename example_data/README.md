@@ -2,6 +2,8 @@
 
 ## 1. Planning CT 
 
+
+
 \.dcm files 
 
 open with MicroDicom Viewer
@@ -58,6 +60,9 @@ Therefore we use the TIGRE as our reconstructor.
 \.dcm files 
 
 open with MicroDicom Viewer
+
+A CBCT example, you can see the scatter influenced image.
+![MicroDicom example](./Microdicom_example.png)
 
 ## Code
 
