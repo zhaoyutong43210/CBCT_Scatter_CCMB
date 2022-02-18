@@ -15,8 +15,7 @@ Project Progress
  - [ ]  [Train & evaluate the U-net work](U-net/README.md)
  - [ ]  Test on mulitiple paitents dataset
  - [ ]  Publication
- 
- Last updated on Feb 16, 2022 by Yutong Zhao
+
 
 ### Codes and Software used in this project: 
 * [EGS_CBCT](https://nrc-cnrc.github.io/EGSnrc/doc/pirs898/egs_cbct.html) in the [EGSnrc code system](https://nrc-cnrc.github.io/EGSnrc/)
