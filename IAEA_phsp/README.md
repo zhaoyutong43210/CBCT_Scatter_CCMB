@@ -6,6 +6,8 @@ The EGSnrc code system got several source option to use in the simulation. The s
 
 [EGS base source](https://nrc-cnrc.github.io/EGSnrc/doc/pirs898/classEGS__BaseSource.html) gives all available source in the EGSnrc simulations. Since the CBCT measurement source is an anisotropic source modified by a bow-tie filter (Full Fan or Half Fan), we need to define the simulation source accordingly.
 
+!(Bowtie Filters)[./bowtiefilters.png]
+
 To achieve this, the only options we have are the following: 
    - make a source simulation from BEAMnrc and use the output file as an [EGS beam source](https://nrc-cnrc.github.io/EGSnrc/doc/pirs898/classEGS__BeamSource.html), taking the X-ray tube, collimator, beam hardening foil and bow-tie fileter into consideration. and this could be complicated but it would be very accurate if we did everything correct.
    
