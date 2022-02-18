@@ -34,6 +34,9 @@ However, the KV source is not on that and the KV blank scan could differs from p
 
 During this time, the example files provided by the IAEA database helped me alot to learn the data structure.
 
+
+![Blank Scan for calibration](./BlankScan.png)
+
 #### Convert IAEA binary file to ASCII file
 
 A generic converter from IAEA to ASCII is given by IAEA. To use it, open the IAEA2ascii.exe file, type the IAEA_phsp filename without extension.
