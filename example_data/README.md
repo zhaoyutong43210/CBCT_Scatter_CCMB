@@ -47,6 +47,11 @@ It's easy to compare the result of these two code, usually, you should be comfor
 
 ![X-ray HU Example](./Projection_HU.gif)
 
+
+
+![Reconstructed image](./Recon_img.gif)
+
+
 #### Calibrations folder
 
 This folder contains the blank scan.
