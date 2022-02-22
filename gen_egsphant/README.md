@@ -20,5 +20,6 @@ Of course, you can modifie this mortran code and recompile the DOSXYZnrc code. S
 
 ### Our code from Planning CT and CBCT (couch + support rack )
 
+use ``` create.m``` or ``` create.m```
 
 ![phantom example](./Phantom.png)
