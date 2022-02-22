@@ -49,7 +49,7 @@ It's easy to compare the result of these two code, usually, you should be comfor
 
 
 
-![Reconstructed image](./Recon_img.gif)
+
 
 
 #### Calibrations folder
@@ -72,8 +72,15 @@ Therefore we use the TIGRE as our reconstructor.
 open with MicroDicom Viewer
 
 A CBCT example, you can see the scatter influenced image.
+
+The image reconstructed by the Varian Reconstructor: 
+
 ![MicroDicom example(CBCT)](./Microdicom_example.png)
 
+
+The image reconstructed by the TIGRE in MATLAB: 
+
+![Reconstructed image](./Recon_img.gif)
 ## Code
 
 Varian_DCM_read.m read the dcm files and save it to a \*.mat file, this is used for further phantom creation. 
