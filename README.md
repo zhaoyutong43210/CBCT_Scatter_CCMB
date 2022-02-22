@@ -49,7 +49,7 @@ some useful toolkit:
 
 
 ## Clinical data.
-The data is collected from Varian TrueBeam OBI for Half Fan throax 120kv scanning.
+The data is collected from Varian TrueBeam OBI for Half Fan throax 125kv scanning.
 
 ##### Planning CT 
 The Scaned patient planning images are stored in *.dcm files. Each file gives the information for each slice.
