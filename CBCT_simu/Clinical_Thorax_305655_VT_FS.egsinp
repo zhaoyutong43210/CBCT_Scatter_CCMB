@@ -1,0 +1,263 @@
+
+###############################################################################
+#
+#  EGSnrc egs++ egs_cbct application sample input file
+#  Copyright (C) 2017 CancerCare Manitoba
+#
+#  EGSnrc is free software: you can redistribute it and/or modify it under
+#  the terms of the GNU Affero General Public License as published by the
+#  Free Software Foundation, either version 3 of the License, or (at your
+#  option) any later version.
+#
+#  EGSnrc is distributed in the hope that it will be useful, but WITHOUT ANY
+#  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+#  FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for
+#  more details.
+#
+#  You should have received a copy of the GNU Affero General Public License
+#  along with EGSnrc. If not, see <http://www.gnu.org/licenses/>.
+#
+###############################################################################
+#
+#  Author:          Yutong Zhao, 2021
+#
+#  Contributors:	Kaiming Guo
+#
+###############################################################################
+#
+#  CBCT image of a throax phantom: projection at 0 degrees.
+#
+#  Projections at other angles can be obtained by modifying input block
+#  :cbct setup: below. One can define the projection angle and angular
+#  interval. Negative values of the latter indicate rotation is done
+#  counter-clockwise around the indicated axis.
+#
+#  BEWARE:
+#
+#  - The path for the different files must be absolute.
+#
+#  - e*muen file used below provided with egs_fac application
+#
+#  - media information in PEGS4 data file fax06.pegs4dat
+#
+#  - Replace $EGS_HOME string below with the actual value!!!
+#
+#  - If the detector resolution is changed, one must recalculate the blank
+#    scan
+#
+#  Before creating a scan, one needs to run a simulation with an empty phantom
+#  to create the blank scan. This is a one time calculation for a specific
+#  CBCT setup (source/scoring-plane combination). This calculation is
+#  typically very fast as there is no interactions and just a simple scoring
+#  of the primaries is in effect. In the future the blank scan should be generated
+#  on-the-fly as it is really very fast!!!
+#
+#  One can visualize the scan files using tools (such as imageJ) by importing
+#  the scan as a raw image. To make use of the scan files in your own code
+#  look inside egs_cbct.cpp to find out the output format.
+#
+###############################################################################
+
+:start run control:
+    ncase =  2e8
+    calculation = first
+:stop run control:
+
+:start geometry definition:
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+    # The XYZ Geometry --- Thorax Phantom                       #
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+	
+    :start geometry:
+        library = egs_ndgeometry
+        type    = EGS_XYZGeometry
+        name    = phantom
+        egsphant file = C:\EGSnrc-master\egs_home\egs_cbct\throaxCauch_305655.egsphant
+		ct ramp = C:\EGSnrc-master\egs_home\egs_cbct\example_thorax.ramp
+    :stop geometry:
+	
+	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+    # 	 The XYZ Geometry --- Thorax Phantom （Blank Phantom）		# 
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+    :start geometry:
+       library = egs_box
+       type    = EGS_box
+       name    = blank_phantom
+       box size = 40 40 40
+       :start media input:
+            media = AIR521ICRU
+       :stop media input:
+    :stop geometry:
+	
+		
+    simulation geometry = phantom        # use this one for real scans
+    #simulation geometry = blank_phantom # use this one first to create blank scan
+
+:stop geometry definition:
+
+:start source definition:
+
+   ###########################################################################
+   # A collimated source, isotropic source,									 #
+   # this maynot match the real scan, be careful of using this source		 #
+   ###########################################################################
+   
+   :start source:
+    library = egs_collimated_source
+    name = point_src
+
+    :start source shape:
+      type = point	
+      position = 0, 0, -100
+    :stop source shape:
+
+# the target shape is the collimator of the source, this is a virtual collimator, i.e. there is no leakage
+
+    :start target shape:
+       library = egs_rectangle		 # We use a rectangle as collimator x and y coordinates of the upper
+       rectangle = -20, -15, 20, 15; # left and lower right corner of the rectangle, which is initially
+									 # located at z = 0
+
+	   :start transformation:		
+	    translation = 16, 0, 50		# now we translate the rectangle by 16 cm in the negative y direction
+		rotation    = 0 0 0			# 16 cm is from the scan geometry(it may vary)
+	   :stop transformation: 
+    :stop target shape:
+	
+    :start spectrum:
+      type = tabulated spectrum
+      spectrum file = C:\EGSnrc-master\egs_home\egs_cbct\120kVp_cbct.ensrc
+    :stop spectrum:
+     charge = 0						# to get a photon source we set the 
+									# charge of the particles to 0
+    :stop source:
+   
+##################################################################################
+# Load the generated IAEA source file, this defines an anisotropic X-ray source  #
+##################################################################################
+
+	:start source:
+		library 	= iaea_phsp_source
+		name 		= iaea_source
+		iaea phase space file = D:\IAEA_phsp\Varian_cbct_120kv 
+		particle type = all
+		#cutout = x1 x2 y1 y2  (optional)
+		#weight window = wmin wmax, the min and max particle weights to use. If the particle weight is not in this range, it is rejected. (optional)
+		recycle photons = 10  #number of times to recycle each photon (optional)
+		#recycle electrons = number of times to recycle each electron (optional)
+	:stop source:
+
+    simulation source = iaea_source
+	# simulation source = point_src
+
+:stop source definition:
+
+	#############################################
+	# To run all projections, I use a script	#
+	# that automatically substitutes the angle	#
+	# and submit the calculation to the queue.  #
+	# ----------------------------------------- #
+	# This part is by Kaiming					#
+	#############################################
+
+:start cbct setup:
+        orbit = 360.0
+        #step = 1
+        y-rotation = 0
+:stop cbct setup:
+
+:start scoring options:
+
+        calculation type = planar # ray-tracing
+
+        :start planar scoring:
+           #minimum Kscat fraction = 0.5
+           surrounding medium = AIR521ICRU   # AIR521ICRU or VACUUM 
+           screen resolution = 192 256   # 40 cm X 30 cm screen(Yreso)x(Xreso)
+           voxel size = 0.1552 0.1552  # This needs to be tested
+           :start transformation:        
+              translation = 16 0 50
+              rotation = 0 0 0
+           :stop transformation:
+            # Uses file provided in the distribution
+            muen file = C:\EGSnrc-master\egs_home\egs_fac\examples\muen_air.data
+        :stop planar scoring:
+
+:stop scoring options:
+
+:start output options:
+
+    ######################################################
+    # Use the line below to monitor an ideal scan		 #
+    ######################################################
+    display type = total # total, attenuated, scattered
+	store signal map  = yes # yes, no (default)
+    #store data arrays = no # yes (default), no
+    :start scan output:
+        ###############################################
+        # Use the 2 lines below to produce a blank scan
+        ###############################################
+        #scan file = C:\EGSnrc-master\egs_home\egs_cbct\blank_256.scan
+        #scan type = blank
+        ###############################################
+        # Use the 3 lines below to produce real scans
+        ###############################################
+        scan file  = C:\EGSnrc-master\egs_home\egs_cbct\thorax_1024.scan
+        blank scan = C:\EGSnrc-master\egs_home\egs_cbct\blank_1024.scan
+        #scan type  = scatter # all,real,scatter,ideal,blank,all, none
+        ###############################################
+    :stop scan output:
+:stop output options:
+
+:start rng definition:
+    type = ranmar
+    initial seeds = 1802 1000
+:stop rng definition:
+
+#################################################################################
+# For fast computation one can use KN for Compton scattering. However,			#
+# in realistic phantoms this may cause a 3% discrepancy.						#
+#################################################################################
+
+:start MC transport parameter:
+
+  Global ECUT = 1 # no e- transport
+  Photon cross sections = xcom  # epdl (or xcom)
+  Bound Compton scattering = off
+  atomic relaxations = off
+  Rayleigh scattering= on
+
+:stop MC transport parameter:
+
+
+##############################################
+# Not needed for blank scan calculations.	 #
+# Comment out for these cases.				 #
+##############################################
+
+:start variance reduction:
+
+   scoring type =  forced_detection  # scores photons AIMED at scoring plane
+   
+   ##############################
+   #Needed when splitting is ON #
+   ##############################
+   
+   delta transport medium = AIR521ICRU # AIR521ICRU LUNG521ICRU ICRUTISSUE521ICRU ICRPBONE521ICRU
+   
+   #################################################
+   # Path length biasing 2*eta0**2/(eta + eta0)**3 #
+   #################################################
+   
+   #mfp transform = 4.0 # eta0 is a floating point parameter
+   
+   FS splitting = 180 300 # Np Ns
+   
+   ############################
+   #Simplest splitting scheme.#
+   ############################
+
+:stop variance reduction:
+
