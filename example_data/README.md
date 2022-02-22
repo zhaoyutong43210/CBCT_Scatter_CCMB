@@ -42,9 +42,11 @@ TIGRE provide 2 methods to retirve the data from xim file:
 
 It's easy to compare the result of these two code, usually, you should be comfort using the mexReadXim function.
 
+
+The projections of the X-ray fluence for a typical paitent:
 ![X-ray Fluence Example](./Projection_fluence.gif)
 
-
+The attenuation of the X-ray fluence for a typical paitent:
 ![X-ray HU Example](./Projection_HU.gif)
 
 
