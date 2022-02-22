@@ -12,4 +12,6 @@ There are several option we can use.
 
 ### 3. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
 
+# Monte-Carlo simulation with anti-scatter grid
+
 # Directly modelling the lead strips of the Anti-scatter grids in EGSnrc models
