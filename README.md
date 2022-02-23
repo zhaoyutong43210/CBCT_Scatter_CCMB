@@ -48,15 +48,20 @@ some useful toolkit:
 - C++ and fortune coding
 
 
-## Clinical data.
-The data is collected from Varian TrueBeam OBI for Half Fan throax 125kv scanning.
+## Clinical data
+
+The data is collected from Varian TrueBeam OBI for Half Fan thorax 125kv scanning in CancerCare Manitoba. Due to privacy, we can not upload the data to this project.
+The data is guaranteed access to qualified persons only.
 
 ##### Planning CT 
-The Scaned patient planning images are stored in *.dcm files. Each file gives the information for each slice.
+The Scaned patient planning images are stored in \*.dcm files. Each file gives the information for each slice. No projection (raw data) is being stored.
 
 ##### Varian CBCT 
+Both the projection (raw data) and the image have been collected. The patient CBCT images are stored in \*.dcm files, and the projection data are in \*.xim files.
 
 ### Monte-Carlo Simulation
+
+We use the EGSnrc to do the Monte-Carlo simulation to get the scatter distribution on certain measured projection.
 
 ### Deeplearning dataset
 * Input: Varian OBI measured raw projections
@@ -64,6 +69,10 @@ The Scaned patient planning images are stored in *.dcm files. Each file gives th
 
 ### Anti-Scatter Grids
 * The anti-scatter grids is corrected by using the scatter-kernal-superposition (SKS) method.
+
+## Results
+
+
 
 # Conference
   [Improvement on Cone Beam Computed Tomography in radiation treatment using a deep learning network](https://pheedloop.com/compasm2021/site/sessions/?id=SESQ6LQBCRTSB0ZM7).
