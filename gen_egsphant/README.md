@@ -23,3 +23,7 @@ Of course, you can modifie this mortran code and recompile the DOSXYZnrc code. S
 use ``` create_egs_phantom.m``` or ``` create_egs_phantom_with_cauch.m```
 
 ![phantom example](./Phantom.png)
+
+## Code
+```generate_dicom_list.m``` this code generate a dicom list for the CTcreate command.
+
