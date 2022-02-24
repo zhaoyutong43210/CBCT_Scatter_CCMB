@@ -1,4 +1,4 @@
-# Post process on Anti-Scatter Grid
+#  Anti-Scatter Grid problem
 
 The Varian Truebeam OBI has an anti-scatter grid during measurement. 
 
@@ -11,6 +11,9 @@ There are several option we can use.
 ### 2. Edit the egs_cbct.cpp or scoring file
 
 ### 3. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
+
+# Post process on Anti-Scatter Grid
+
 
 # Monte-Carlo simulation with anti-scatter grid
 A simple Monte-Carlo simulation is made to test the the grid response function. 
@@ -28,3 +31,4 @@ please see the figure below:
 
 
 # Directly modelling the lead strips of the Anti-scatter grids in EGSnrc models
+
