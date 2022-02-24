@@ -55,3 +55,10 @@ A generic converter from IAEA to ASCII is given by IAEA. To use it, open the IAE
 ## Results
 
 ![EGS_CBCT blank scan simulation](./EGS_blankrResult.png)
+
+## Test on different X-ray source
+
+![EGS_CBCT phantom scan simulation compare](./XSource_phan.png)
+
+
+
