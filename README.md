@@ -76,6 +76,14 @@ The open-source code, TIGRE, is used in this project to perform the reconstructi
 #### dataset:
 * Input: Varian OBI measured raw projections
 * Ground truth: scatter level pattern with Anti-Scatter grid
+
+First stage : single patient
+
+Second stage : multiple patients with ground truth
+
+Third stage: test with a unseen patient
+
+
 #### Architecture(s):
 * U-net 4 layer (modified)
 * U-net 6 layer (modified)
