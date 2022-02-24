@@ -6,13 +6,14 @@ However, the EGS_CBCT program does not have the option to calculate anti-scatter
 
 There are several option we can use.
 
-### 1. Build a series lead strip physical model directly in the EGS_cbct program.
+### 1. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
 
-### 2. Edit the egs_cbct.cpp or scoring file
+### 2. Build a series lead strip physical model directly in the EGS_cbct program.
 
-### 3. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
 
-# Post process on Anti-Scatter Grid
+
+
+# 1. Post process on Anti-Scatter Grid
 
 
 ### Monte-Carlo simulation with anti-scatter grid
@@ -36,7 +37,7 @@ please see the figure below:
 
 Now, we have figured out the physics origin of the grid response function. 
 
-# Directly modelling the lead strips of the Anti-scatter grids in EGSnrc models
+# 2. Directly modelling the lead strips of the Anti-scatter grids in EGSnrc models
 
 We can also model the lead strips of the anti-scatter grids in the EGSnrc simulations. It's not easy to model 2400 lead strips in EGS, we still achieved this method. 
 
