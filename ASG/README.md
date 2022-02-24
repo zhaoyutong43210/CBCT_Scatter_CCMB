@@ -10,7 +10,7 @@ There are several option we can use.
 
 ### 2. Build a series lead strip physical model directly in the EGS_cbct program.
 
-
+or add a function to make the anti-scatter grid correction in EGS_CBCT, by edit ```egs_cbct.cpp``` file. But this may be beyond the scope of this research. 
 
 
 # 1. Post process on Anti-Scatter Grid
