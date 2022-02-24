@@ -54,4 +54,4 @@ A generic converter from IAEA to ASCII is given by IAEA. To use it, open the IAE
 
 ## Results
 
-![EGS_CBCT blank scan simulation(./EGS_blankrResult.png)
+![EGS_CBCT blank scan simulation](./EGS_blankrResult.png)
