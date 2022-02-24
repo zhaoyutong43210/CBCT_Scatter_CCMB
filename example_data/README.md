@@ -9,7 +9,7 @@ Paitent sliced data has been stored in a series \.dcm files, which can be open w
 
 This data is used to build paitent phantom as well as the ground truth in this research. 
 
-# The Varian TrueBeam OBI gives the following data:
+## The Varian TrueBeam OBI gives the following data:
 
 ## 2. CBCT projections
 
