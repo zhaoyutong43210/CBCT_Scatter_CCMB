@@ -47,3 +47,5 @@ From a test run, we can see that this method will slow down the simulation at le
 This method seems not practical to solve the anti-scatter grid problem.
 
 ![grid response function](model.png)
+
+The anti-scatter grid with patient phantom, the figure is from egs_view.
