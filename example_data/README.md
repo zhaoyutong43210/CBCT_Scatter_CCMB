@@ -90,5 +90,8 @@ The image reconstructed by the TIGRE in MATLAB:
 
 ![Reconstructed image](./Recon_img.gif)
 ## Code
+```Varian_DCM_read.m``` read the dcm files and save it to a \*.mat file, this is used for further phantom creation. 
 
-Varian_DCM_read.m read the dcm files and save it to a \*.mat file, this is used for further phantom creation. 
+```compare_planning_CBCT.m``` produce a video to compare the planning CT and CBCT images. 
+
+
