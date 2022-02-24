@@ -4,13 +4,13 @@ The Varian Truebeam OBI has an anti-scatter grid during measurement.
 
 However, the EGS_CBCT program does not have the option to calculate anti-scatter grid.
 
-There are several option we can use.
+There are several options we can use.
 
 ### 1. Use the scatter-kernel-superposition (SKS) method to calculate the anti-scatter grid
 
 ### 2. Build a series lead strip physical model directly in the EGS_cbct program.
 
-or add a function to make the anti-scatter grid correction in EGS_CBCT, by edit ```egs_cbct.cpp``` file. But this may be beyond the scope of this research. 
+or add a function to make the anti-scatter grid correction in EGS_CBCT, by editing ```egs_cbct.cpp``` file. But this may be beyond the scope of this research. 
 
 
 # 1. Post process on Anti-Scatter Grid
