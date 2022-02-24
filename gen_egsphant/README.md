@@ -1,6 +1,6 @@
 # Generate patient phantom 
 
-### Why do we need to develop a new phantom file? 
+
 
 ### EGS phantom from Planning CT
 
@@ -12,7 +12,7 @@ Please see the section 16 CT Based Phantoms/ctcreate at page 110 in this [DOSXYZ
 
 ![EGS phantom example](./EGS_phantom.png)
 
-
+#### Why do we need to develop a new phantom file? 
 However, this [mortran code](https://github.com/nrc-cnrc/EGSnrc/blob/master/HEN_HOUSE/omega/progs/ctcreate/ctcreate.mortran) got maybe over 25 years old I guess.
 The maxium resolution it can achieve is around ~3mm, which is too poor for our project. 
 
