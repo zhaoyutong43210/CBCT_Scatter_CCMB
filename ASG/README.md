@@ -45,3 +45,5 @@ Use the ```Generate_ASG_Geom_file_prism_method.m``` will generate the lead strip
 From a test run, we can see that this method will slow down the simulation at least 30+ times, a typical simulation 2.7 hours will extended to over 80 hours. 
 
 This method seems not practical to solve the anti-scatter grid problem.
+
+![grid response function](model.png)
