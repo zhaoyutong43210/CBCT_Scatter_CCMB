@@ -1,13 +1,15 @@
-# The Varian TrueBeam OBI gives the following data:
+# Clinical data
 
-## 1. Planning CT 
+## 1. Planning CT images
 
 Paitent sliced data has been stored in a series \.dcm files, which can be open with MicroDicom Viewer. The following figure gives an example:
 
 
 ![MicroDicom example(planning CT)](./Microdicom_example2.png)
 
-This data is used as the ground truth in this research. 
+This data is used to build paitent phantom as well as the ground truth in this research. 
+
+# The Varian TrueBeam OBI gives the following data:
 
 ## 2. CBCT projections
 
@@ -68,7 +70,7 @@ The FilterBowtie.xim file or Filter.xim  in the AIR-Half-Bowtie-125KV folder is 
 
 This folder only contains the reconstruction setup, the reconstructed image is in the third section.
 
-## 3. CBCT 
+## 3. CBCT images
 
 This folder contains the reconstructed image by using the Varian Reconstructor (this software is not accesssible since it's not a free, nor an open-source software).
 Therefore we use the TIGRE as our reconstructor.
