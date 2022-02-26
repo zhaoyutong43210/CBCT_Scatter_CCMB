@@ -85,9 +85,9 @@ Third stage: test with a unseen patient
 
 
 #### Architecture(s):
-* U-net 4 layer (modified)
-* U-net 6 layer (modified)
-* U-net++ 
+*  [x] U-net 4 layer (modified)
+*  [x] U-net 6 layer (modified)
+*  [ ] U-net++ 
 
 
 ### Anti-Scatter Grids
