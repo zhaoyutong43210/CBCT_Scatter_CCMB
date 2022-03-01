@@ -17,7 +17,11 @@ When we use the IAEA source, the uncertainties is unable to evaluate since the r
 You can run ```read_egsmap_parallel.m``` to read the \*.egsmap files into a MATLAB matrix. and visulize it with ```imshow``` or ```imagesc```.
 A typical result is show below: 
 
+![egsmap result](egsmap_result.png)
 
+compare with the raw projection measured by Varian CBCT: 
+
+![varian raw](varianraw.png)
 
 # EGS_CBCT Simulation Insight
 
