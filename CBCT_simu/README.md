@@ -8,6 +8,17 @@ wait for a long simulation time, restart if necessary.
 
 once you got all egsmap files, you have finished the simulation should move to the anti-scatter grid post process.
 
+### Results 
+
+After you run each ```egs_cbct``` simulation, the program will generate a output file (\*.egsmap) that stores the raw projection that captured by the imager. 
+The Air Kerma of Ktotal (primary + scatter), Katt (primary), and Kscatt (scatter) of each pixel has been recorded with their uncertainties. 
+When we use the IAEA source, the uncertainties is unable to evaluate since the random number generator is not within the egs program. 
+
+You can run ```read_egsmap_parallel.m``` to read the \*.egsmap files into a MATLAB matrix. and visulize it with ```imshow``` or ```imagesc```.
+A typical result is show below: 
+
+
+
 # EGS_CBCT Simulation Insight
 
 This part expalins how the egs_cbct works in this project.
