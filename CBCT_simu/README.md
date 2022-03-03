@@ -23,6 +23,11 @@ compare with the raw projection measured by Varian CBCT:
 
 ![varian raw](varianraw.png)
 
+The simulated scatter distribution need to project on the real measurement:
+
+![scatter to measurement](scatter_to_measure.png)
+
+
 # EGS_CBCT Simulation Insight
 
 This part expalins how the egs_cbct works in this project.
