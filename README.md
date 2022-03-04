@@ -10,7 +10,7 @@ Project Progress
  - [x]  [generate X-ray source (IAEA_phsp phase space database)](IAEA_phsp/README.md)
  - [x]  [EGS_CBCT simulation based on measurement geometry](CBCT_simu/README.md) ( ~900 projections each patient)
  - [x]  [Anti-scatter Grid post process on the simulation results](ASG/README.md)
- - [ ]  Test scatter removal performance with TIGRE reconstruction toolkit
+ - [ ]  [Test scatter removal performance with TIGRE reconstruction toolkit](scatter_remove/README.md)
  - [ ]  Generate Training/Validation/Test data set
  - [ ]  [Train & evaluate the U-net work](U-net/README.md)
  - [ ]  Test on mulitiple paitents dataset
