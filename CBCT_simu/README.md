@@ -27,6 +27,9 @@ The simulated scatter distribution need to project on the real measurement:
 
 ![scatter to measurement](scatter_to_measure.png)
 
+![Video1 for scatter simulation (Simulated raw images)](Simulation_results1.mp4)
+
+![Video2 for scatter simulation (Simulated raw images - angle corrected)](Simulation_results2.mp4)
 
 # EGS_CBCT Simulation Insight
 
